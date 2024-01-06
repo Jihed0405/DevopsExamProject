@@ -7,6 +7,7 @@ pipeline {
                 script {
                    
                     echo "Build the project"
+                    checkout scm
                     load('./.env')
                     bat 'yarn dev'
                 }
