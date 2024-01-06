@@ -5,9 +5,30 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                   
                     echo "Build the project"
-                    bat 'start cmd /c  "yarn dev" && timeout /t 200 && taskkill /IM node.exe /F'
+                    def proc = bat(script: 'start cmd /c "your_command_here"', returnStatus: true)
+                    def timeoutSeconds = 300
+                    def timer = 0  def pollInterval = 10
+                    while (timer < timeoutSeconds) {
+                        // Check if the process has completed
+                        if (proc.exitStatus == 0) {
+                            echo "Process completed successfully."
+                            break
+                        }
+
+                        // Wait for the specified interval
+                        sleep pollInterval
+
+                        // Update the timer
+                        timer += pollInterval
+                    }
+
+                    // If the process is still running after the timeout, kill it
+                    if (proc.exitStatus != 0) {
+                        echo "Process did not complete within the timeout. Killing the process."
+                        bat 'taskkill /IM node.exe /F'
+                    }
+                    
                     
                 }
             }
