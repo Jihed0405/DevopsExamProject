@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     echo "Build the project"
-                    def proc = bat(script: 'start cmd /c "yarn dev"', returnStatus: true)
+                    def proc = bat(script: 'start cmd /c call "startapp.bat"', returnStatus: true)
                     def timeoutSeconds = 300
                     def timer = 0  
                     def pollInterval = 10
