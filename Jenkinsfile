@@ -7,7 +7,7 @@ pipeline {
                 script {
                    
                     echo "Build the project"
-                    bat 'start cmd /c  "yarn dev" && timeout /t 5 && taskkill /IM node.exe /F'
+                    bat 'start cmd /c  "yarn dev" && timeout /t 20 && taskkill /IM node.exe /F'
                     
                 }
             }
