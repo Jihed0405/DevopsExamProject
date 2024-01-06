@@ -7,7 +7,7 @@ pipeline {
                 script {
                    
                     echo "Build the project"
-                    load('.env')
+                    load('./.env')
                     bat 'yarn dev'
                 }
             }
