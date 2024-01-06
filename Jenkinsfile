@@ -7,7 +7,7 @@ pipeline {
                 script {
                     // Étape de construction - Exemple : construire une image Docker
                     sh 'npm install'
-                    sh 'npm build'
+                    sh 'npm start'
                 }
             }
         }
