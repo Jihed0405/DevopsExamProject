@@ -5,9 +5,10 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    // Étape de construction - Exemple : construire une image Docker
-                    sh 'npm install'
-                    sh 'npm start'
+                   
+                    echo "Build the project"
+                    
+                    bat 'npm install'
                 }
             }
         }
@@ -15,8 +16,8 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    // Étape de test - Exemple : exécuter des tests
-                   sh 'npm test'
+                echo "Test the project"
+                   bat  'npm test'
                 }
             }
         }
@@ -24,7 +25,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    // Étape de déploiement - Exemple : déployer sur Kubernetes
+                   
                     echo "Déploiement du projet"
                 }
             }
