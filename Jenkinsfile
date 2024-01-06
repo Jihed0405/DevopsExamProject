@@ -15,6 +15,9 @@ pipeline {
         stage('Test') {
             steps {
                 script {
+                
+                catchError(){
+                          
                 echo "Test the project"
                    bat  'npm test'
                    
@@ -31,6 +34,8 @@ pipeline {
                     :: open nyc test coverage reports
                     yarn coverage
                     '''
+                }
+              
                 }
             }
         }
