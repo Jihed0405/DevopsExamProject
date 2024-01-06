@@ -8,7 +8,8 @@ pipeline {
                     echo "Build the project"
                     def proc = bat(script: 'start cmd /c "your_command_here"', returnStatus: true)
                     def timeoutSeconds = 300
-                    def timer = 0  def pollInterval = 10
+                    def timer = 0  
+                    def pollInterval = 10
                     while (timer < timeoutSeconds) {
                         // Check if the process has completed
                         if (proc.exitStatus == 0) {
