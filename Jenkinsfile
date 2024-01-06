@@ -8,6 +8,7 @@ pipeline {
                    
                     echo "Build the project"
                     bat 'start cmd /c call "startapp.bat"'
+                    bat 'TIMEOUT /T 2 /NOBREAK EXIT /B'
                 }
             }
         }
