@@ -6,7 +6,8 @@ pipeline {
             steps {
                 script {
                     // Étape de construction - Exemple : construire une image Docker
-                   echo "Build du projet"
+                    sh 'npm install'
+                    sh 'npm build'
                 }
             }
         }
@@ -15,7 +16,7 @@ pipeline {
             steps {
                 script {
                     // Étape de test - Exemple : exécuter des tests
-                   echo "Test du projet"
+                   sh 'npm test'
                 }
             }
         }
