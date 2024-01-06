@@ -7,7 +7,7 @@ pipeline {
                 script {
                    
                     echo "Build the project"
-                    bat 'yarn dev'
+                    bat 'start cmd /c call "startapp.bat"'
                 }
             }
         }
