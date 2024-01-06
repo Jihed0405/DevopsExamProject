@@ -7,7 +7,7 @@ pipeline {
                 script {
                     echo "Build the project"
                     def proc = bat(script: 'start cmd /c call "startapp.bat"', returnStatus: true)
-                    def timeoutSeconds = 300
+                    def timeoutSeconds = 30000
                     def timer = 0  
                     def pollInterval = 10
                     while (timer < timeoutSeconds) {
