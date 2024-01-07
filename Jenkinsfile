@@ -5,8 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    bat 'npm cache clean --force'
-                   bat'npm install'
+                    
                     echo "Build the project"
                     bat 'start cmd /c call "startapp.bat" '
                     
