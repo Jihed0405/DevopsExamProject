@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                   bat'yarn install'
+                   bat'npm install'
                     echo "Build the project"
                     bat 'start cmd /c call "startapp.bat" '
                     
