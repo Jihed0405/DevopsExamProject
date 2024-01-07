@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                    
-                    echo "Build the project"
+                    echo "Build the project now"
                     bat 'start cmd /c call "startapp.bat" '
                     
                 }
