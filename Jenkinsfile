@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    bat 'npm install -g cross-env'
+                    
                     echo "Build the project"
                     bat 'start cmd /c call "startapp.bat" '
                     
